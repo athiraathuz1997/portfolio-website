@@ -6,11 +6,13 @@
 -->
 <html>
 	<head>
-		<title>Solid State by HTML5 UP</title>
+		<title>personal website</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="https://media-exp1.licdn.com/dms/image/D5635AQHNpLwbglOIZQ/profile-framedphoto-shrink_200_200/0/1658326907927?e=1658934000&v=beta&t=onMJ6UMSk-fRgtG08NAL6ILwA-rt0EvgdYwfZEc3pKE" type="image/gif" sizes="16x16">
+
 	</head>
 	<body class="is-preload">
 
@@ -31,7 +33,7 @@
 					<h2>Menu</h2>
 					<ul class="links">
 						<li><a href="index.html">Home</a></li>
-						<li><a href="generic.html">Education & Skills</a></li>
+						<li><a href="generic.html">Education - Skills - Activities</a></li>
 
 					</ul>
 					<a href="#" class="close">Close</a>
@@ -93,7 +95,7 @@
 				<div class="inner">
 					<h2 class="major">Get in touch</h2>
 					<p>Do you have any questions? Please do not hesitate to contact me directly.</p>
-					<form method="post" action="#">
+					<form method="post" action="#" name="contact-form">
 						<div class="fields">
 							<div class="field">
 								<label for="name">Name</label>
@@ -138,5 +140,17 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+        <script>
+            const scriptURL = ' https://script.google.com/macros/s/AKfycbzNp_yUe7lJTB2ugb0bd7rJNska3wtJCiB2xqNCvdGgTjR9Ux4MX0rgUyzu71qVW33Hgw/exec'
+            const form = document.forms['contact-form']
+
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => console.log('Success!', response))
+                    .catch(error => console.error('Error!', error.message))
+            })
+        </script>
+
 	</body>
 </html>
